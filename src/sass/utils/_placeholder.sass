@@ -1,0 +1,74 @@
+%pos-middle
+    position: absolute
+    top: 50%
+    left: 50%
+    -webkit-transform: translate(-50%, -50%)
+
+%flex-cm
+    display: flex
+    -webkit-box-align: center
+    justify-content: center
+    box-pack: center
+    align-items: center
+%flexInline-cm
+    @extend %flex-cm
+    display: inline-flex
+%flex-between
+    display: flex
+    justify-content: space-between
+    align-items: center
+    & > span
+        display: block
+%pos
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+%border
+    border: 0.07rem solid red
+%b-yellow
+    border: 2px solid yellow
+%outline
+    outline: 0.07rem solid red
+%copyright
+    position: absolute
+    width: 100%
+    bottom: 3px
+    height: 20px
+%forceOneLine
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+%textShadow
+    text-shadow: 0px 0.07rem 0.07rem rgba(0, 0, 0, 0.4)
+%fz22
+    font-size: 12px
+    transform: scale(22/24)
+%fz22l
+    @extend %fz22
+    transform-origin: left center
+%flexInline
+    display: inline-flex
+    flex-wrap: nowrap
+%emptyImg
+    background:
+        image: u('t-qgzb.png')
+        size: r(271) r(82)
+        repeat: no-repeat
+        position: center center
+        color: #eeeeee
+%pos-bottom-shade
+    position: fixed
+    left: 0
+    top: 0
+    z-index: 20
+    display: flex
+    align-items: flex-end
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, .6)
+    &>div
+        flex: 1
+        background: #fff

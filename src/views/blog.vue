@@ -1,16 +1,16 @@
 <template>
-  <div id="cp-foo">
-    <p @click="back">{{msg}}</p>
+  <div id="cp-blog">
+    <a @click="back">{{msg}}</a>
   </div>
 </template>
 
 <script>
 export default {
 
-  name: 'foo',
+  name: 'blog',
   data () {
     return {
-      msg: 'this is foo page'
+      msg: 'back to last page'
     }
   },
   methods: {
@@ -22,6 +22,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  p
+  a
     color: red
+    text-decoration: underline
+    cursor: pointer
+
 </style>

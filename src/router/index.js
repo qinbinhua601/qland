@@ -3,15 +3,16 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-import Foo from '../components/foo.vue'
+import Blog from '../views/blog.vue'
+import Index from '../views/index.vue'
 
 const routes = [
-  {
-    path: '/foo',
-    component: Foo
-  },
+  { path: '/index', component: Index },
+  { path: '/blog', component: Blog },
+  { path: '*', redirect: '/index' }
 ]
 
 export default new VueRouter({
+  mode: 'history',
   routes
 })

@@ -1,0 +1,61 @@
+@mixin bg($width, $height, $url)
+    width: rem($width/2)
+    height: rem($height/2)
+    background-image: u($url)
+    background-size: contain
+    background-repeat: no-repeat
+@mixin ibg($class,$sprite)
+    @extend [class^='i-#{$sprite}-']
+    @extend .#{$class}
+@mixin scroll($top, $bottom)
+    position: absolute
+    top: $top
+    bottom: $bottom
+    left: 0
+    width: 100%
+    overflow-x: hidden
+    overflow-y: auto
+    -webkit-overflow-scrolling: touch
+@mixin poc($top, $width)
+    position: absolute
+    top: $top + 0px
+    left: (640px - $width) / 4
+@mixin headImg($w)
+    width: rem($w)
+    height: rem($w)
+    border-radius: 50%
+    background:
+        size: contain
+        image: u('demg.png')
+    img
+        width: 100%
+        height: 100%
+        display: block
+        border-radius: 50%
+@mixin plusSymbol($w)
+    width: $w
+    height: $w
+    position: relative
+    vertical-align: middle
+    display: inline-block
+    &:before, &:after
+        content: ''
+        position: absolute
+        width: 100%
+        height: .07rem
+        background: currentColor
+        top: 50%
+        left: 50%
+        transform: translate3d(-50%, -50% , 0)
+        backface-visibility: hidden
+    &:after
+        transform: translate3d(-50%, -50%, 0) rotate(90deg)
+@mixin tabBottomBar($itemNum, $targetWidth)
+    $index: $itemNum - 1
+    @for $i from 0 through $index
+        $gap: 100% / ($itemNum)
+        $padding: ($gap - $targetWidth) / 2
+        &.index#{$i}
+            .vux-tab-ink-bar
+                left: ($i * $gap + $padding)!important
+                right: (($index - $i) * $gap + $padding)!important
