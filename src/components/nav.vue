@@ -1,7 +1,7 @@
 <template>
-<div id="cp-nav">
+<div id="cp-nav" class="nav">
   <ul>
-    <li v-for="item of list" :class="{'active': item.path === currentActivePath}">
+    <li v-for="item of navList" :class="{'active': item.path === currentActivePath}">
       <router-link :to="item.path">{{item.text}}</router-link>
     </li>
   </ul>
@@ -13,14 +13,17 @@
 export default {
   name: 'nav',
   data () {
-      return {}
+      return {
+        navList: [
+          {path: '/index', text: 'index'},
+          {path: '/blog', text: 'blog'},
+          {path: '/photo', text: 'photo'},
+          {path: '/about', text: 'about'},
+          {path: '/contact', text: 'contact'},
+        ]
+      }
   },
-  props: {
-    list: {
-      type: Array,
-      required: true
-    }
-  },
+  props: {},
   methods: {},
   watch: {},
   route: {
@@ -41,28 +44,22 @@ export default {
 <style lang="sass" scoped>
 #cp-nav
   ul
-    list-style-type: none
-    overflow: hidden
+    border: 1px solid #ccc
+    border-bottom: none
     li
-      float: left
-      padding-right: 2px
-      height: 30px
+      border-bottom: 1px solid #ccc
       a
-        color: rgb(0, 0, 0)
-        font-family: arial
-        display: inline-block
-        width: 120px
-        font-weight: bold
+        display: block
+        height: 36px
+        line-height: 36px
         text-align: center
-        padding: 2px
+        color: white
         text-decoration: none
-        text-transform: uppercase
-        height: 30px
-        line-height: 30px
-        background-color: rgb(190, 190, 190)
+        text-transform: capitalize
+        font-weight: bolder
+        transition: all .3s linear
         &:hover
-          background-color: rgb(190, 0, 0)
-      &.active
-        a
-          background-color: rgb(190, 0, 0)
+          background-color: #be0000
+          color: #000
+          font-style: italic
 </style>

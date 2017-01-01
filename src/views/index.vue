@@ -1,8 +1,7 @@
 <template>
   <div id="cp-index">
-    <h2>HOME PAGE!</h2>
-    <hr>
-    <!-- <router-link to="/foo">to blog</router-link> -->
+    <p>this is index page</p>
+    <p>this is index page</p>
   </div>
 </template>
 
@@ -25,8 +24,4 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-  h2
-    font-family: Tahoma,Geneva,sans-serif
-    color: #fff
-</style>
+<style lang="sass" scoped></style>
