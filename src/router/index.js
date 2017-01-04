@@ -12,7 +12,7 @@ import Contact from '../views/contact.vue'
 
 const routes = [
   { path: '/index', component: Index },
-  { path: '/blog', component: Blog },
+  { path: '/blog', component: Blog},
   { path: '/blog/:id', component: Detail },
   { path: '/photo', component: Photo },
   { path: '/about', component: About },

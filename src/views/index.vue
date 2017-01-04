@@ -1,7 +1,6 @@
 <template>
   <div id="cp-index">
     <p>this is index page</p>
-    <p>this is index page</p>
   </div>
 </template>
 

@@ -1,8 +1,8 @@
 <template>
 <div id="cp-nav" class="nav">
   <ul>
-    <li v-for="item of navList" :class="{'active': item.path === currentActivePath}">
-      <router-link :to="item.path">{{item.text}}</router-link>
+    <li v-for="item of navList" :class="{'active': item.path === currentActivePath}" @click="$router.push(item.path)">
+      <a>{{item.text}}</a>
     </li>
   </ul>
 </div>
@@ -30,7 +30,7 @@ export default {
   },
   computed: {
     currentActivePath() {
-      return this.$route.path
+      return `/${this.$route.path.split('/')[1]}`
     }
   },
   created () {},
@@ -48,9 +48,20 @@ export default {
     border-bottom: none
     li
       border-bottom: 1px solid #ccc
+      text-align: center
+      cursor: pointer
+      &:hover, &.active
+        background-color: #be0000
+        & > a
+          color: #000
+          font-style: italic
+          position: relative
+          padding-right: 15px
+          &:after
+            opacity: 1
+            right: 0
       a
-        display: block
-        height: 36px
+        display: inline-block
         line-height: 36px
         text-align: center
         color: white
@@ -58,8 +69,12 @@ export default {
         text-transform: capitalize
         font-weight: bolder
         transition: all .3s linear
-        &:hover
-          background-color: #be0000
-          color: #000
-          font-style: italic
+        &:after
+          content: '\00bb'
+          position: absolute
+          opacity: 0
+          top: 0
+          right: -20px
+          transition: 0.5s
+          color: black
 </style>

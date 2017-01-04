@@ -9,7 +9,7 @@
             <i>Alex.Q</i> posted at 2017-1-2
           </span>
           <b></b>
-          <a :href="'/blog/' + item">View</a>
+          <router-link :to="'/blog/' + item">View</router-link>
         </div>
       </li>
     </ul>
@@ -41,7 +41,7 @@ export default {
       border: 1px solid #ccc
       .title
         padding-left: 10px
-        line-height: 30px 
+        line-height: 30px
       .content
         padding: 10px
         flex: 1

@@ -1,6 +1,6 @@
 <template>
   <div id="cp-contact">
-    <p>this is contact page</p>
+    <a class="email" href= "mailto:qinbinhua601@hotmail.com">Contact Me</a>
   </div>
 </template>
 
@@ -20,9 +20,8 @@ export default {
 </script>
 
 <style lang="sass" scoped>
-  a
-    color: red
-    text-decoration: underline
+#cp-contact
+  a.email
+    color: #fff
     cursor: pointer
-
 </style>

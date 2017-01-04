@@ -1,7 +1,7 @@
 <style lang="sass" src="./sass/main.sass"></style>
 <template>
   <div id="app">
-    <div id="logo">
+    <div id="logo" @click="$router.push('/')">
       <span>Q</span>
       min Blog
     </div>
@@ -33,11 +33,14 @@
 @import "./sass/base/config"
 @import "./sass/utils/function"
 html, body
-  height: 100%
+  font-family: Microsoft Yahei, BlinkMacSystemFont
+  height: auto
 body
   background-image: u('binding_dark_@2X.png')
   display: flex
   flex-direction: column
+  &::-webkit-scrollbar
+    display: none
 #logo
   position: relative
   font-family: arial
@@ -45,6 +48,7 @@ body
   padding-left: 10px
   font-weight: bold
   height: 70px
+  cursor: pointer
   &:after
     content: ''
     position: absolute
@@ -67,11 +71,7 @@ body
   .main
     display: flex
     flex: 1
-    overflow: hidden
-    overflow-y: scroll
     margin-top: 20px
-    &::-webkit-scrollbar
-      display: none
     .nav
       width: 15%
     .view
@@ -79,6 +79,4 @@ body
       color: white
       padding: 20px
       border: 1px solid #ccc
-
-  footer
 </style>

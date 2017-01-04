@@ -1,28 +1,21 @@
 <template>
   <div id="cp-about">
-    <p>this is about page</p>
+    <h2>Qin Bin Hua</h2>
+    <img src="../images/41950051265319018a.gif" alt="">
+    <p>Web Programmer</p>
   </div>
 </template>
 
 <script>
 export default {
-
   name: 'about',
   data () {
     return {}
   },
-  methods: {
-    back() {
-      window.history.back()
-    }
-  }
+  methods: {}
 }
 </script>
 
 <style lang="sass" scoped>
-  a
-    color: red
-    text-decoration: underline
-    cursor: pointer
-
+#cp-about
 </style>
