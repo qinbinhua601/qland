@@ -1,8 +1,8 @@
 <template>
   <div id="cp-about">
-    <h2>Qin Bin Hua</h2>
+    <p>Alex.Q</p>
     <img src="../images/41950051265319018a.gif" alt="">
-    <p>Web Programmer</p>
+    <p>Front End Engineer</p>
   </div>
 </template>
 
@@ -18,4 +18,8 @@ export default {
 
 <style lang="sass" scoped>
 #cp-about
+  p
+    padding: 10px 0
+    span
+      font-size: 80%
 </style>
