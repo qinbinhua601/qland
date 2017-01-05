@@ -5,9 +5,14 @@
         <img :src="'../src/' + item.small">
       </li>
     </ul>
-    <div id="frame" style="display: block;">
-      <a class="close" href="#">x</a>
-      <img src="http://www.alexq.net/images/port/41950051265319018a.gif">
+    <div class="layer" v-show="showLayer" @click="showLayer = false">
+      <div class="frame" @click.stop="">
+        <div class="img">
+          <div class="left-arrow" @click="decrement"></div>
+          <img :src="'../src/' + currentPreviewItem.big">
+          <div class="right-arrow" @click="increment"></div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -21,32 +26,58 @@ export default {
     return {
       photoList: getPhotoList(),
       showLayer: false,
-      slider: null,
       currentIndex: 0
     }
   },
   methods: {
     previewByIndex(index) {
-      if(!this.slider) {
-        this.initSlider()
-      }
+      this.currentIndex = index
       this.showLayer = true
-      this.slider.slideTo(index)
     },
-    initSlider() {
-      this.slider = new iSlider(document.getElementById('iSlider-wrapper'), PHOTO_LIST.map((e) => {return {content: '../src/' + e.big}}));
+    increment() {
+      this.currentIndex++
+      this.currentIndex = this.currentIndex % this.photoList.length
+      console.log(this.currentIndex)
+    },
+    decrement() {
+      this.currentIndex--
+      this.currentIndex = this.currentIndex < 0 ? 0 : this.currentIndex
+      console.log(this.currentIndex)
     }
   },
   computed: {
     currentPreviewItem() {
-      return this.photoList[0]
+      return this.photoList[this.currentIndex]
     }
   },
-  mounted() {}
+  mounted() {
+    document.body.addEventListener('keyup', ({keyCode}) => {
+      switch(keyCode) {
+        case 39: 
+          console.log('right')
+          this.increment()
+          break
+        case 37:
+          console.log('left')
+          this.decrement()
+          break
+        case 27:
+          console.log('ESC')
+          this.showLayer = false
+          break
+        default:
+          console.log('default')
+          break
+
+      }
+    })
+  }
 }
 </script>
 
 <style lang="sass" scoped>
+@import "../sass/base/config"
+@import "../sass/utils/function"
 #cp-photo.view
   padding: 20px 10px
   ul.photo-list
@@ -71,10 +102,36 @@ export default {
     display: flex
     align-items: center
     justify-content: center
-    #iSlider-wrapper
+    .frame
       background-color: #fff
       width: 600px
       height: 400px
-      padding: 30px
+      padding: 30px 37.5px
       border-radius: 20px
+      .img
+        width: 100%
+        height: 100%
+        position: relative
+        .left-arrow, .right-arrow
+          position: absolute
+          content: ''
+          width: r(75)
+          height: r(127)
+          right: 0
+          top: 50%
+          transform: translate(0%, -50%)
+          background:
+            image: u('src/images/arrow_right.png')
+            repeat: no-repeat
+            position: center
+            size: contain
+        .right-arrow
+          right: 0
+          transform: translate(0%, -50%)
+        .left-arrow
+          left: 0
+          transform: translate(0%, -50%) rotate(180deg)
+        img
+          width: 100%
+          height: 100%
 </style>

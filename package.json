@@ -12,6 +12,7 @@
     "vue": "^2.1.0"
   },
   "devDependencies": {
+    "autoprefixer": "^6.6.1",
     "axios": "^0.15.3",
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
@@ -23,6 +24,7 @@
     "islider.js": "^2.2.0",
     "lodash": "^4.17.4",
     "node-sass": "^4.1.1",
+    "postcss-loader": "^1.2.1",
     "sass-loader": "^4.1.1",
     "vue-loader": "^10.0.0",
     "vue-router": "^2.1.1",

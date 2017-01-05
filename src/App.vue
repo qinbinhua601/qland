@@ -35,10 +35,12 @@
 html, body
   font-family: Microsoft Yahei, BlinkMacSystemFont
   height: auto
+  user-select: none
 body
-  background-image: u('binding_dark_@2X.png')
+  background-image: u('src/images/binding_dark_@2X.png')
   display: flex
   flex-direction: column
+  overflow-x: hidden
   &::-webkit-scrollbar
     display: none
 #logo
