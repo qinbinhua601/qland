@@ -19,6 +19,7 @@
 
 <script>
 import { PHOTO_LIST } from '../config/'
+
 const getPhotoList = () => PHOTO_LIST
 export default {
   name: 'photo',
@@ -36,18 +37,19 @@ export default {
     },
     increment() {
       this.currentIndex++
-      this.currentIndex = this.currentIndex % this.photoList.length
-      console.log(this.currentIndex)
+      this.currentIndex = this.currentIndex % this.photoListLength
     },
     decrement() {
       this.currentIndex--
-      this.currentIndex = this.currentIndex < 0 ? 0 : this.currentIndex
-      console.log(this.currentIndex)
+      this.currentIndex = this.currentIndex < 0 ? this.photoListLength - 1 : this.currentIndex
     }
   },
   computed: {
     currentPreviewItem() {
       return this.photoList[this.currentIndex]
+    },
+    photoListLength() {
+      return this.photoList.length
     }
   },
   mounted() {
@@ -78,6 +80,7 @@ export default {
 <style lang="sass" scoped>
 @import "../sass/base/config"
 @import "../sass/utils/function"
+
 #cp-photo.view
   padding: 20px 10px
   ul.photo-list
@@ -113,6 +116,16 @@ export default {
         height: 100%
         position: relative
         .left-arrow, .right-arrow
+          &:hover
+            background:
+              color: rgb(61, 61, 61)
+              image: linear-gradient(top,rgb(78, 78, 78),rgb(71, 71, 71)) 
+            background:
+              image: u('src/images/arrow_right.png') 
+              repeat: no-repeat
+              position: center
+              size: r(75 / 2) r(127 / 2)
+          cursor: pointer
           position: absolute
           content: ''
           width: r(75)
@@ -121,10 +134,13 @@ export default {
           top: 50%
           transform: translate(0%, -50%)
           background:
-            image: u('src/images/arrow_right.png')
+            color: rgb(69, 69, 69)
+            image: linear-gradient(top,rgb(62, 62, 62),rgb(51, 51, 51)) 
+          background:
+            image: u('src/images/arrow_right.png') 
             repeat: no-repeat
             position: center
-            size: contain
+            size: r(75 / 2) r(127 / 2)
         .right-arrow
           right: 0
           transform: translate(0%, -50%)
