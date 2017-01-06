@@ -55,7 +55,7 @@ export default {
   mounted() {
     document.body.addEventListener('keyup', ({keyCode}) => {
       switch(keyCode) {
-        case 39: 
+        case 39:
           console.log('right')
           this.increment()
           break
@@ -119,9 +119,9 @@ export default {
           &:hover
             background:
               color: rgb(61, 61, 61)
-              image: linear-gradient(top,rgb(78, 78, 78),rgb(71, 71, 71)) 
+              image: linear-gradient(to bottom,rgb(78, 78, 78),rgb(71, 71, 71))
             background:
-              image: u('src/images/arrow_right.png') 
+              image: u('src/images/arrow_right.png')
               repeat: no-repeat
               position: center
               size: r(75 / 2) r(127 / 2)
@@ -135,9 +135,9 @@ export default {
           transform: translate(0%, -50%)
           background:
             color: rgb(69, 69, 69)
-            image: linear-gradient(top,rgb(62, 62, 62),rgb(51, 51, 51)) 
+            image: linear-gradient(to bottom,rgb(62, 62, 62),rgb(51, 51, 51))
           background:
-            image: u('src/images/arrow_right.png') 
+            image: u('src/images/arrow_right.png')
             repeat: no-repeat
             position: center
             size: r(75 / 2) r(127 / 2)
