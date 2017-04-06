@@ -1,4 +1,4 @@
-<template>
+<template lang="jade">
   <div id="cp-photo">
     <ul class="photo-list">
       <li v-for="(item, index) in photoList" @click="previewByIndex(index)">

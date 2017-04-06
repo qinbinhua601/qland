@@ -1,7 +1,6 @@
-<template>
-  <div id="cp-index">
-    <div id="chart"></div>
-  </div>
+<template lang="jade">
+  #cp-index
+    #chart
 </template>
 
 <script>

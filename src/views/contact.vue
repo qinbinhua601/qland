@@ -1,4 +1,4 @@
-<template>
+<template lang="jade">
   <div id="cp-contact">
     <p>Contact me:</p>
     <a class="email" href= "mailto:qinbinhua601@hotmail.com">qinbinhua601@hotmail.com</a>

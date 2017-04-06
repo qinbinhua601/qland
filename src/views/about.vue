@@ -1,4 +1,4 @@
-<template>
+<template lang="jade">
   <div id="cp-about">
     <p>Alex.Q</p>
     <img src="../images/41950051265319018a.gif" alt="">

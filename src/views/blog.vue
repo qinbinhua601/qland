@@ -1,4 +1,4 @@
-<template>
+<template lang="jade">
   <div id="cp-blog">
     <ul class="blog-list">
       <li v-for="item of 10">
