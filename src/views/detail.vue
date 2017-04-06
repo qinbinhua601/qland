@@ -1,7 +1,7 @@
-<template lang="jade">
-  <div id="cp-detail">
-    <p>this is blog {{$route.params.id}}</p>
-  </div>
+<template>
+<div id="cp-detail">
+  <p>this is blog {{$route.params.id}}</p>
+</div>
 </template>
 
 <script>

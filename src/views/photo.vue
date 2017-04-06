@@ -1,20 +1,20 @@
-<template lang="jade">
-  <div id="cp-photo">
-    <ul class="photo-list">
-      <li v-for="(item, index) in photoList" @click="previewByIndex(index)">
-        <img :src="'../src/' + item.small">
-      </li>
-    </ul>
-    <div class="layer" v-show="showLayer" @click="showLayer = false">
-      <div class="frame" @click.stop="">
-        <div class="img">
-          <div class="left-arrow" @click="decrement"></div>
-          <img :src="'../src/' + currentPreviewItem.big">
-          <div class="right-arrow" @click="increment"></div>
-        </div>
+<template>
+<div id="cp-photo">
+  <ul class="photo-list">
+    <li v-for="(item, index) in photoList" @click="previewByIndex(index)">
+      <img :src="'../src/' + item.small">
+    </li>
+  </ul>
+  <div class="layer" v-show="showLayer" @click="showLayer = false">
+    <div class="frame" @click.stop="">
+      <div class="img">
+        <div class="left-arrow" @click="decrement"></div>
+        <img :src="'../src/' + currentPreviewItem.big">
+        <div class="right-arrow" @click="increment"></div>
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>

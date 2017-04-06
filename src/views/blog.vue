@@ -1,19 +1,19 @@
-<template lang="jade">
-  <div id="cp-blog">
-    <ul class="blog-list">
-      <li v-for="item of 10">
-        <div class="title">Title is here {{item}}</div>
-        <p class="content">I am the content {{item}} I am the contentI am the contentI am the contentI am the content</p>
-        <div class="bottom">
-          <span class="date">
-            <i>Alex.Q</i> posted at 2017-1-2
-          </span>
-          <b></b>
-          <router-link :to="'/blog/' + item">View</router-link>
-        </div>
-      </li>
-    </ul>
-  </div>
+<template>
+<div id="cp-blog">
+  <ul class="blog-list">
+    <li v-for="item of 10">
+      <div class="title">Title is here {{item}}</div>
+      <p class="content">I am the content {{item}} I am the contentI am the contentI am the contentI am the content</p>
+      <div class="bottom">
+        <span class="date">
+          <i>Alex.Q</i> posted at 2017-1-2
+        </span>
+        <b></b>
+        <router-link :to="'/blog/' + item">View</router-link>
+      </div>
+    </li>
+  </ul>
+</div>
 </template>
 
 <script>
